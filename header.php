@@ -52,4 +52,20 @@
 	</header>
 
 	<section class="container">
+		<div class="row">
+			<?php
+				wp_nav_menu( array(
+					'container'      => false,
+					'menu_class'     => 'menu',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
+					'theme_location' => 'main-menu',
+					'depth'          => 3,
+					'fallback_cb'    => false,
+					'walker'         => new Foundationpress_Top_Bar_Walker(),
+				));
+			?>
+		</div>
+	</section>
+
+	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );
