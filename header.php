@@ -14,6 +14,8 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
@@ -51,19 +53,21 @@
 		</nav>
 	</header>
 
-	<section class="container">
+	<section class="container" style="border-bottom: 1px solid #ccc">
 		<div class="row">
-			<?php
-				wp_nav_menu( array(
-					'container'      => false,
-					'menu_class'     => 'menu',
-					'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
-					'theme_location' => 'main-menu',
-					'depth'          => 3,
-					'fallback_cb'    => false,
-					'walker'         => new Foundationpress_Top_Bar_Walker(),
-				));
-			?>
+			<nav class="sub-main_menu">
+				<?php
+					wp_nav_menu( array(
+						'container'      => false,
+						'menu_class'     => 'navigation__list',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'theme_location' => 'sub-main-menu',
+						'depth'          => 3,
+						'fallback_cb'    => false,
+						'walker'         => new Foundationpress_Top_Bar_Walker(),
+					));
+				?>
+			</nav>
 		</div>
 	</section>
 
