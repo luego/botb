@@ -10,6 +10,7 @@
 register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
+	'sub-main-menu' => __( 'Sub Main Menu' )
 ));
 
 
@@ -50,6 +51,19 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 	}
 }
 
+if ( ! function_exists( 'foundationpress_sub_menu' ) ) {
+	function foundationpress_sub_menu() {
+		wp_nav_menu( array(
+			'container'      => false,
+			'menu_class'     => 'dropdown menu',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu data-disable-hover="true" data-click-open="true">%3$s</ul>',
+			'theme_location' => 'sub-main-menu',
+			'depth'          => 3,
+			'fallback_cb'    => false,
+			'walker'         => new Embassy_Walker_Nav_Menu(),
+		));
+	}
+}
 
 /**
  * Add support for buttons in the top-bar menu:

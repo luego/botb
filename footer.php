@@ -30,5 +30,25 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
+<script type="text/javascript">
+	$(function(){
+		// $(document).foundation();
+		$("#sub-menu-section").mouseover(function(){
+			var el = $ ('.navigation__list--secondary');
+			el.addClass( "js-dropdown-active" );
+			var ele = new Foundation.DropdownMenu (el);
+			//$(this).find("navigation__list--secondary.li")
+		});
+
+		$("#sub-menu-section").mouseout(function(){
+			var el = $ ('.navigation__list--secondary');
+			el.removeClass( "js-dropdown-active" );
+			$ ('.navigation__list--secondary') .foundation ('destroy');
+		});
+
+
+
+	});
+</script>
 </body>
 </html>

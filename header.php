@@ -40,7 +40,7 @@
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="top-bar-left header-logo-container">
 				<ul class="menu">
-					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_theme_file_uri('assets/images/logoHD.png'); ?>"></a></li>
+					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://luxsagosolutions.com/botb/wp-content/uploads/2017/03/logo-nuevo-SIC-BOO-ok-01.jpg"></a></li>
 				</ul>
 			</div>
 			<div class="top-bar-right">
@@ -53,20 +53,10 @@
 		</nav>
 	</header>
 
-	<section class="container" style="border-bottom: 1px solid #ccc">
+	<section id="sub-menu-section" class="container" style="border-bottom: 1px solid #ccc">
 		<div class="row">
-			<nav class="sub-main_menu">
-				<?php
-					wp_nav_menu( array(
-						'container'      => false,
-						'menu_class'     => 'navigation__list',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'theme_location' => 'sub-main-menu',
-						'depth'          => 3,
-						'fallback_cb'    => false,
-						'walker'         => new Foundationpress_Top_Bar_Walker(),
-					));
-				?>
+			<nav class="navigation__list top-bar">
+				<?php foundationpress_sub_menu(); ?>
 			</nav>
 		</div>
 	</section>
