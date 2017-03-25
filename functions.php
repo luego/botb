@@ -50,7 +50,7 @@ require_once( 'library/responsive-images.php' );
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
-
+/*
 function foundationpress_add_fields_to_ticket($default_fields)
 {
 	$default_fields[] = array(
@@ -75,4 +75,4 @@ function foundationpress_add_fields_to_ticket($default_fields)
 	return $default_fields;
 }
 
-add_filter('tc_ticket_fields', 'foundationpress_add_fields_to_ticket');
+add_filter('tc_ticket_fields', 'foundationpress_add_fields_to_ticket');*/
